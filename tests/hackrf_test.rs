@@ -3,8 +3,7 @@ extern crate hackrf;
 use hackrf::HackRF;
 
 #[test]
-fn it_can_init_and_exit() {
-    assert_eq!(hackrf::SUCCESS, HackRF::init());
-    assert_eq!(hackrf::SUCCESS, HackRF::exit());
+fn it_doesnt_panic_on_create() {
+    let _x = HackRF::new();
 }
 
