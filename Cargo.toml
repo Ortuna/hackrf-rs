@@ -1,0 +1,6 @@
+[package]
+name = "hackrf"
+version = "0.1.0"
+authors = ["Sumeet Singh <ortuna@gmail.com>"]
+
+[dependencies]
