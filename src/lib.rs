@@ -1,14 +1,29 @@
 extern crate libc;
 mod ffi;
+mod devices;
+
+use devices::{ Device, Devices };
 
 pub const SUCCESS: i32 = ffi::hackrf_error::HACKRF_SUCCESS as i32;
 
-pub struct HackRF {}
+pub struct HackRF {
+    pub device: ffi::hackrf_device
+}
+
 impl HackRF {
 
     pub fn new() -> HackRF {
         HackRF::init();
         HackRF{}
+    }
+
+    pub fn list(&self) -> Vec<Device> {
+       let devices = Devices::fetch();
+       devices
+    }
+
+    fn open(&self) {
+
     }
 
     fn init() -> i32 {
